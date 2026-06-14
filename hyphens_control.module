@@ -1,0 +1,14 @@
+<?php
+
+use Drupal\Core\Config\ConfigFactoryInterface;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function hyphens_control_page_attachments(array &$attachments) {
+  $config = \Drupal::config('hyphens_control.settings');
+
+  if ($config->get('disable_hyphens')) {
+    $attachments['#attached']['library'][] = 'hyphens_control/no_hyphens';
+  }
+}

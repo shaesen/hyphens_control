@@ -1,0 +1,6 @@
+hyphens_control.settings:
+  title: 'Hyphenation'
+  description: 'Enable or disable hyphenation in Olivero.'
+  parent: system.admin_config_ui
+  route_name: hyphens_control.settings
+  weight: 100

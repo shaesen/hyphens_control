@@ -1,0 +1,11 @@
+:root {
+  --olivero-hyphens: none !important;
+}
+
+body,
+body * {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  -moz-hyphens: none !important;
+}

@@ -1,0 +1,7 @@
+hyphens_control.settings:
+  type: config_object
+  label: 'Hyphenation settings'
+  mapping:
+    disable_hyphens:
+      type: boolean
+      label: 'Disable hyphenation'

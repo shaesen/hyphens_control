@@ -1,0 +1,7 @@
+hyphens_control.settings:
+  path: '/admin/config/user-interface/hyphens-control'
+  defaults:
+    _form: '\Drupal\hyphens_control\Form\HyphensSettingsForm'
+    _title: 'Hyphenation settings'
+  requirements:
+    _permission: 'administer site configuration'

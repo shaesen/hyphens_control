@@ -1,0 +1,9 @@
+{
+  "name": "drupal/hyphens_control",
+  "description": "Allows administrators to enable or disable hyphenation in the Olivero theme.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "drupal/core": "^10 || ^11"
+  }
+}
