@@ -2,3 +2,7 @@ no_hyphens:
   css:
     theme:
       css/no-hyphens.css: {}
+global:
+  css:
+    theme:
+      css/hyphens_control_global.css: {}
