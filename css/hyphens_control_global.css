@@ -1,0 +1,6 @@
+/* Force disable hyphens in all themes */
+body * {
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+}
