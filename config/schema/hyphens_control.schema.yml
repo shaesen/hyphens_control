@@ -5,3 +5,11 @@ hyphens_control.settings:
     disable_hyphens:
       type: boolean
       label: 'Disable hyphenation'
+      
+hyphens_control.settings:
+  type: config_object
+  label: 'Hyphens Control settings'
+  mapping:
+    global_disable:
+      type: boolean
+      label: 'Force hyphens off in all themes'
