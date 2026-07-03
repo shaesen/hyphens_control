@@ -15,17 +15,30 @@ Hyphens Control is a simple Drupal module that allows administrators to enable o
 
 ## Installation
 
-1. Place the module in `modules/custom/hyphens_control` or install via Composer.
-2. Enable the module:
+1. Define module location
+```
+composer config repositories.hyphens_control vcs https://github.com/shaesen/hyphens_control
+```
+2. Install the module using composer
+```
+composer require 'drupal/hyphens_control:^1.0'
+```
+3. Clear Cache
+```
+drush cr
+```
+4. Enable the module:
 ```
 drush en hyphens_control -y
 ```
-3. Go to:
+5. Configuration
+   - on = no hyphanation 
+   - off = hyphanation (theme default without this module)
 ```
 Admin → Configuration → User interface → Hyphenation
 ```
 
-4. Check Disable hyphenation in Olivero and save.
+6. Check Disable hyphenation in Olivero and save.
 
 # Configuration
 
