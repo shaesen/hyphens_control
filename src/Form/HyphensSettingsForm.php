@@ -23,7 +23,12 @@ class HyphensSettingsForm extends ConfigFormBase {
       '#title' => $this->t('Disable hyphenation in Olivero'),
       '#default_value' => $config->get('disable_hyphens'),
     ];
-
+    $form['global_disable'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Force hyphens off in all themes'),
+      '#default_value' => $config->get('global_disable'),
+   ];
+    
     return parent::buildForm($form, $form_state);
   }
 
@@ -31,6 +36,8 @@ class HyphensSettingsForm extends ConfigFormBase {
     $this->config('hyphens_control.settings')
       ->set('disable_hyphens', $form_state->getValue('disable_hyphens'))
       ->save();
+
+    $config->set('global_disable', $form_state->getValue('global_disable'));
 
     parent::submitForm($form, $form_state);
   }
