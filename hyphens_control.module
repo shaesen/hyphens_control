@@ -1,9 +1,14 @@
 <?php
 
-use Drupal\Core\Config\ConfigFactoryInterface;
+/**
+ * @file
+ * Contains hook implementations for the Hyphens Control module.
+ */
 
 /**
  * Implements hook_page_attachments().
+ *
+ * Attaches the global hyphens disabling library when enabled in configuration.
  */
 function hyphens_control_page_attachments(array &$attachments) {
   $config = \Drupal::config('hyphens_control.settings');
@@ -12,3 +17,4 @@ function hyphens_control_page_attachments(array &$attachments) {
     $attachments['#attached']['library'][] = 'hyphens_control/global';
   }
 }
+

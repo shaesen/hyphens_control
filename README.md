@@ -1,64 +1,51 @@
 # Hyphens Control
 
-Hyphens Control is a simple Drupal module that allows administrators to enable or disable hyphenation in the Olivero theme via a configuration toggle.
+Hyphens Control provides administrators with fine‑grained control over automatic
+word hyphenation in Drupal. The module supports both theme‑specific overrides
+(Olivero) and a global hyphenation suppression mode that affects all themes.
 
 ## Features
 
-- Adds a configuration page under **Configuration → User interface → Hyphenation**.
-- Provides a checkbox to disable hyphenation in Olivero.
-- Injects a small CSS library that overrides hyphenation-related properties when enabled.
-
-## Requirements
-
-- Drupal 10 or 11
-- Olivero theme (for the effect to be visible)
+- Disable automatic hyphenation in the Olivero theme.
+- Force hyphenation off globally across all themes.
+- Ships with two CSS libraries:
+  - `no_hyphens`: disables hyphenation for Olivero.
+  - `global`: disables hyphenation for all themes.
 
 ## Installation
 
-1. Define module location
-```
-composer config repositories.hyphens_control vcs https://github.com/shaesen/hyphens_control
-```
-2. Install the module using composer
-```
-composer require 'drupal/hyphens_control:^1.0'
-```
-3. Clear Cache
-```
-drush cr
-```
-4. Enable the module:
-```
-drush en hyphens_control -y
-```
-5. Configuration
-   - on = no hyphanation 
-   - off = hyphanation (theme default without this module)
-```
-Admin → Configuration → User interface → Hyphenation
-```
+1. Place the module in `modules/custom/hyphens_control`.
+2. Enable the module through **Extend**.
+3. Configure the module under  
+   **Configuration → User interface → Hyphenation**.
 
-6. Check Disable hyphenation in Olivero and save.
+## Configuration
 
-# Configuration
+The module provides two settings:
 
-The module stores its setting in:
-```
-hyphens_control.settings (config object)
+- **Disable hyphenation in Olivero**  
+  Removes automatic word hyphenation in the Olivero theme.
 
-Key: disable_hyphens (boolean)
-```
+- **Force hyphens off in all themes**  
+  Applies a global CSS override that disables hyphenation everywhere.
 
-When disable_hyphens is enabled, the module attaches the hyphens_control/no_hyphens library on every page.
+Configuration is stored in:
 
-# Uninstallation
+hyphens_control.settings
 
-1. Uncheck the setting on the configuration page (optional).
+## Technical Details
 
-2. Disable and uninstall the module:
-```
-drush pm:uninstall hyphens_control -y
-```
-# License
+- CSS libraries are attached via `hook_page_attachments()`.
+- Configuration is managed using `ConfigFormBase`.
+- Schema definitions are located in `config/schema/hyphens_control.schema.yml`.
+- Default configuration is installed from `config/install/hyphens_control.settings.yml`.
 
-GPL-2.0-or-later
+## Compatibility
+
+- Drupal 10  
+- Drupal 11
+
+## Support
+
+Hyphens Control is a lightweight utility module.  
+Bug reports, suggestions, and improvements are welcome.

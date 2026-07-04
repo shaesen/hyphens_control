@@ -1,11 +1,22 @@
-:root {
-  --olivero-hyphens: none !important;
-}
-
-body,
-body * {
-  hyphens: none !important;
+/* Disable hyphenation for Olivero content areas */
+html {
   -webkit-hyphens: none !important;
   -ms-hyphens: none !important;
-  -moz-hyphens: none !important;
+  hyphens: none !important;
+}
+
+body {
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  hyphens: none !important;
+}
+
+p,
+li,
+article,
+section,
+div {
+  -webkit-hyphens: none !important;
+  -ms-hyphens: none !important;
+  hyphens: none !important;
 }
